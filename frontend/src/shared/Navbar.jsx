@@ -8,8 +8,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full bg-white shadow-md z-50">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center p-4">
-        <div className="text-2xl font-bold text-green-600">
-          <Link to="/">Foodie</Link>
+        <div className="text-2xl font-bold text-green-600 font-mono">
+          <Link to="/">CampusCrave</Link>
         </div>
         <div className="hidden md:flex space-x-6 text-lg text-gray-800">
           <Link to="#home" className="hover:text-green-600 transition">Home</Link>
