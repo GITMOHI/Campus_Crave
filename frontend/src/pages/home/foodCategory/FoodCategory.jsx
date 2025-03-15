@@ -13,8 +13,8 @@ const categories = [
 
 const FoodCategories = ({ setSelectedCategory, selectedCategory }) => {
   return (
-    <section className="px-6 lg:px-16 py-12 bg-white relative lg:mt-14 md:mt-10 mt-7">
-      <h2 className="text-3xl lg:text-4xl font-bold text-green-600 text-center mb-8">
+    <section className="px-6 lg:px-16 py-12  relative lg:mt-20 md:mt-10 mt-7">
+      <h2 className="text-2xl mb-28 lg:text-3xl font-bold text-green-600 text-center  flex justify-start border-l-8 border-green-600 pl-2 rounded-lg">
         Browse Food Categories
       </h2>
 

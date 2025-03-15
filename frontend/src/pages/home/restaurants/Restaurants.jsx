@@ -1,14 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import img from "../../../assets/Banner.jpg";
+import img from "../../../assets/carbon.png";
+import img1 from "../../../assets/mama.png"
 
 const restaurants = [
-  { id: 1, name: "Pizza Palace", image: "/assets/pizza1.jpg" },
-  { id: 2, name: "Burger King", image: "/assets/burger1.jpg" },
-  { id: 3, name: "Sushi Express", image: "/assets/sushi1.jpg" },
-  { id: 4, name: "Taco Bell", image: "/assets/taco1.jpg" },
-  { id: 5, name: "Pasta Place", image: "/assets/pasta1.jpg" },
-  { id: 6, name: "Salad Bar", image: "/assets/salad1.jpg" },
+  { id: 1, name: "Pizza Palace", image: img },
+  { id: 2, name: "Burger King", image: img1 },
+  { id: 3, name: "Sushi Express", image: img},
+  { id: 4, name: "Taco Bell", image: img1},
+  { id: 5, name: "Pasta Place", image: img },
+  { id: 6, name: "Salad Bar", image: img1},
 ];
 
 const duplicatedRestaurants = [...restaurants, ...restaurants];
@@ -36,8 +37,8 @@ const RestaurantSection = () => {
   }, []);
 
   return (
-    <section className="px-6 lg:px-16 py-12 bg-white lg:mt-14 md:mt-10 mt-7">
-      <h2 className="text-3xl lg:text-4xl font-bold text-green-600 text-center mb-8">
+    <section className="px-6 lg:px-16 py-12  lg:mt-14 md:mt-10 mt-7">
+      <h2 className="text-2xl lg:text-3xl font-bold text-green-600 text-center border-l-8 rounded-lg pl-2 border-green-600 flex justify-start mb-16">
         Choose Your Favorite Restaurant
       </h2>
 
@@ -60,27 +61,20 @@ const RestaurantSection = () => {
           {duplicatedRestaurants.map((restaurant, index) => (
             <div
               key={index}
-              className="relative flex-shrink-0 bg-white shadow-xl rounded-2xl overflow-hidden p-5 text-center transition-transform transform hover:scale-105 hover:shadow-2xl"
-              style={{ width: "250px", height: "320px" }}
+              className="relative flex items-center flex-shrink-0  overflow-hidden p-5 text-center transition-transform transform  w-[50vw] lg:w-[15vw] "
+              
             >
               {/* Restaurant Image */}
-              <div className="relative w-full h-48">
+              <div className="relative w-full   hover:scale-125  ">
                 <img
-                  src={img}
+                  src={restaurant.image}
                   alt={restaurant.name}
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>
+              
 
-              {/* Restaurant Name */}
-              <h3 className="mt-4 text-lg font-semibold text-gray-800">
-                {restaurant.name}
-              </h3>
-
-              {/* Explore Button */}
-              <button className="mt-3 px-5 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-all duration-300">
-                Explore
-              </button>
+              
             </div>
           ))}
         </motion.div>

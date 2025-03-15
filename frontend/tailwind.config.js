@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
       animation: {
         marquee: "marquee 30s linear infinite", // Add marquee animation
       },

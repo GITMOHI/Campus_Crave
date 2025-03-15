@@ -14,7 +14,7 @@ const Banner = () => {
         <p className="text-lg lg:text-xl mt-4 text-gray-700 max-w-lg">
           Order from your favorite restaurants and get delicious food delivered at your doorstep.
         </p>
-        <button className="mt-6 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg text-lg font-medium">
+        <button className="mt-6 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg text-lg font-medium lg:mt-20 md:mt-6">
           Order Now
         </button>
       </div>
