@@ -1,3 +1,4 @@
+
 version: "3.9"
 
 services:
@@ -6,18 +7,18 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "5173:5173"        # Expose port for frontend
+      - "5173:5173"  # Expose port for frontend
     volumes:
       - .:/app  # Bind mount for live reloading
-      - ./frontend:/usr/src/app  # Bind mount for frontend code (this should work for hot-reloading)
+      - ./frontend:/usr/src/app  # Bind mount for frontend code
       - /usr/src/app/node_modules # Ensure node_modules are available inside the container
     environment:
-      - VITE_HOST=0.0.0.0       # Allow the frontend to be accessed externally
-    command: npm run dev         # Run the development server
+      - VITE_HOST=0.0.0.0  # Allow frontend to be accessed externally
+    command: npm run dev  # Run the frontend development server
 
   backend:
     depends_on:
-      - postgres
+      - frontend
     restart: unless-stopped
     build:
       context: ./backend
@@ -30,25 +31,5 @@ services:
     environment:
       - NODE_ENV=development
     env_file:
-      - ./backend/.env
+      - ./backend/.env  # Supabase credentials are stored here
     command: npm run dev
-
-  postgres:
-    image: postgres:latest
-    container_name: campus_crave-db-1
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=mypassword
-      - POSTGRES_DB=campus_crave_db
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "myuser", "-d", "campus_crave_db"]
-      interval: 10s
-      retries: 5
-      timeout: 5s
-
-volumes:
-  postgres_data:        # Declare the named volume for PostgreSQL data persistence
