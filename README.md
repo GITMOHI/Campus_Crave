@@ -12,7 +12,7 @@ CampusCrave is a feature-rich food delivery and ordering platform designed to co
 
 
 ## Build with ❤️ and 
-React, Redux-toolkit, Node Js,Express Js,Postgress
+React, Redux-toolkit, Node Js,Express Js,PostgreSQL
 
 
 ## Getting Started
