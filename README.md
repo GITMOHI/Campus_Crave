@@ -7,7 +7,7 @@ CampusCrave is a feature-rich food delivery and ordering platform designed to co
 
 **YouTube Demo:** Watch Demo(will be available soon)
 
-**ERD :** ![Alt text](./ERD.jpg)
+**ERD :** ![Alt text](./Database%20ER%20diagram%20.png)
 
 
 
